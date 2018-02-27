@@ -1,0 +1,187 @@
+<model
+  xmlns="http://namespaces.plone.org/supermodel/schema"
+  xmlns:security="http://namespaces.plone.org/supermodel/security"
+  xmlns:form="http://namespaces.plone.org/supermodel/form"
+  xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+    <schema>
+      <field name="my_text_line_field" type="zope.schema.TextLine">
+        <title>My text line field</title>
+        <description>A text line field</description>
+        <required>True</required>
+        <default>Could a sub-title field</default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_text_field" type="zope.schema.Text">
+        <title>My text field</title>
+        <description>A text field (TextArea)</description>
+        <required>True</required>
+        <default>Could be a comment field</default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_password_field" type="zope.schema.Password">
+        <title>My password field</title>
+        <description></description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+        <max_length>30</max_length>
+        <min_length>6</min_length>
+      </field>
+      <field name="my_choice_field" type="zope.schema.Choice">
+        <title>My choice field</title>
+        <description>A choice field</description>
+        <vocabulary>plone.app.vocabularies.PortalTypes</vocabulary>
+        <default>Document</default>
+        <required>True</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_multichoice_field" type="zope.schema.Set">
+        <title>My multi choice field</title>
+        <description>A multible choice field</description>
+        <value_type type="zope.schema.Choice">
+          <vocabulary>plone.app.vocabularies.PortalTypes</vocabulary>
+        </value_type>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_bool_field" type="zope.schema.Bool">
+        <title>My bool field</title>
+        <description>A boolean field</description>
+        <form:widget type="plone.z3cform.textlines.TextLinesFieldWidget">
+          <klass>my_css_class</klass>
+        </form:widget>
+        <required>False</required>
+        <default>True</default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_bool_single_checkbox_field" type="zope.schema.Bool">
+        <title>My bool single checkbox field</title>
+        <description>A bool field with a single checkbox widget</description>
+        <form:widget type="plone.app.z3cform.widget.SingleCheckBoxBoolFieldWidget"></form:widget>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_file_field" type="plone.namedfile.field.NamedBlobFile">
+        <title>My file field</title>
+        <description>A blob file field</description>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_image_field" type="plone.namedfile.field.NamedBlobImage">
+        <title>My image field</title>
+        <description>A blob image field</description>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_related_file" type="z3c.relationfield.schema.RelationChoice">
+        <title>My related file</title>
+        <portal_type>
+          <element>File</element>
+        </portal_type>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_related_files" type="z3c.relationfield.schema.RelationList">
+        <title>My related files and images</title>
+        <value_type type="z3c.relationfield.schema.RelationChoice">
+          <title>Related</title>
+          <portal_type>
+            <element>File</element>
+            <element>Image</element>
+          </portal_type>
+        </value_type>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_tuble_field" type="zope.schema.Tuple">
+        <title>My tuple field</title>
+        <description>A tuple field</description>
+        <required>False</required>
+        <readonly>False</readonly>
+        <value_type type="zope.schema.TextLine">
+          <title>Value</title>
+        </value_type>
+        <default>
+          <element>element1</element>
+          <element>element2</element>
+        </default>
+      </field>
+      <field name="froozen" type="zope.schema.FrozenSet">
+        <title>froozen</title>
+        <description>description</description>
+        <required>False</required>
+        <readonly>False</readonly>
+        <value_type type="zope.schema.TextLine">
+          <title>Val</title>
+        </value_type>
+        <default>
+          <element>1</element>
+          <element>2</element>
+        </default>
+      </field>
+      <field name="set" type="zope.schema.Set">
+        <title>set</title>
+        <description>description</description>
+        <required>False</required>
+        <readonly>False</readonly>
+        <value_type type="zope.schema.TextLine">
+          <title>Val</title>
+        </value_type>
+        <default>
+          <element>1</element>
+          <element>2</element>
+        </default>
+      </field>
+      <field name="my_date_field" type="zope.schema.Date">
+        <title>My date field</title>
+        <description>A date field</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_date_time_field" type="zope.schema.Datetime">
+        <title>My date time field</title>
+        <description>A dateTime field</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_decimal_field" type="zope.schema.Decimal">
+        <title>My decimal field</title>
+        <description>A decimal field</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+        <max_length></max_length>
+        <min_length></min_length>
+      </field>
+      <field name="my_int_field" type="zope.schema.Int">
+        <title>My int field</title>
+        <description>A integer field</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+        <max_length></max_length>
+        <min_length></min_length>
+      </field>
+      <field name="my_uri_field" type="zope.schema.URI">
+        <title>My URI field</title>
+        <description>A URI (URL) field</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+      </field>
+      <field name="my_data_grid_field" type="zope.schema.List">
+        <title>My datagridfield</title>
+        <description>A DataGrid field</description>
+        <value_type type="collective.z3cform.datagridfield.DictRow">
+          <schema>example.z3cformwidgets.content.todo_task.INameTokenTableRowSchema</schema>
+        </value_type>
+        <form:widget type="collective.z3cform.datagridfield.DataGridFieldFactory"/>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+    </schema>
+</model>

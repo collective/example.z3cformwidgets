@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layers>
+  <layer
+      name="example.z3cformwidgets"
+      interface="example.z3cformwidgets.interfaces.IExampleZ3CformwidgetsLayer"
+      />
+</layers>
