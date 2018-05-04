@@ -8,6 +8,7 @@ from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 import example.z3cformwidgets
+import collective.z3cform.datagridfield
 
 
 class ExampleZ3CformwidgetsLayer(PloneSandboxLayer):
@@ -18,6 +19,7 @@ class ExampleZ3CformwidgetsLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
+        self.loadZCML(package=collective.z3cform.datagridfield)
         self.loadZCML(package=example.z3cformwidgets)
 
     def setUpPloneSite(self, portal):

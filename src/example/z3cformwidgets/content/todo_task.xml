@@ -31,7 +31,7 @@
       <field name="my_choice_field" type="zope.schema.Choice">
         <title>My choice field</title>
         <description>A choice field</description>
-        <vocabulary>plone.app.vocabularies.PortalTypes</vocabulary>
+        <vocabulary>example.z3cformwidgets.OtherFiles</vocabulary>
         <default>Document</default>
         <required>True</required>
         <readonly>False</readonly>
@@ -91,6 +91,15 @@
             <element>File</element>
             <element>Image</element>
           </portal_type>
+        </value_type>
+        <required>False</required>
+        <readonly>False</readonly>
+      </field>
+      <field name="other_related_files" type="z3c.relationfield.schema.RelationList">
+        <title>Related files and images from custom vocabulary</title>
+        <value_type type="z3c.relationfield.schema.RelationChoice">
+          <title>Related</title>
+          <vocabulary>example.z3cformwidgets.AvailableThings</vocabulary>
         </value_type>
         <required>False</required>
         <readonly>False</readonly>
