@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="example.z3cformwidgets.AddPythonicTasks"
+        title="example.z3cformwidgets: Add PythonicTasks"
+    />
+
+        
+    <permission
         id="example.z3cformwidgets.AddTodoTask"
         title="example.z3cformwidgets: Add TodoTask"
     />
