@@ -89,7 +89,6 @@
           <title>Related</title>
           <portal_type>
             <element>File</element>
-            <element>Image</element>
           </portal_type>
         </value_type>
         <required>False</required>
@@ -181,6 +180,15 @@
         <required>False</required>
         <default></default>
         <readonly>False</readonly>
+      </field>
+      <field name="my_uri_field2" type="zope.schema.URI">
+        <title>My URI field with LinkFieldWidget</title>
+        <description>A URI (URL) field</description>
+        <required>False</required>
+        <default></default>
+        <readonly>False</readonly>
+        <form:widget type="plone.app.z3cform.widget.LinkFieldWidget">
+        </form:widget>
       </field>
       <field name="my_data_grid_field" type="zope.schema.List">
         <title>My datagridfield</title>
